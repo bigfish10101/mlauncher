@@ -1,3 +1,3 @@
 ## mlauncher
 
-small, clean, no Ads
+### small, fast, clean

@@ -9,9 +9,6 @@ import java.util.List;
 
 import Models.AppInfoModel;
 
-/**
- * Created by Administrator on 2015/11/13 0013.
- */
 public class CommTool {
 
     private static CommTool _instance = null;

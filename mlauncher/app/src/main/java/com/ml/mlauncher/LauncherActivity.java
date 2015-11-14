@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -97,13 +98,19 @@ public class LauncherActivity extends Activity {
                         listItemView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.app_list_item_view, parent, false);
                     }
 
-                    TextView textView = (TextView) listItemView.findViewById(R.id.app_list_item_view_text_view);
-                    if (textView != null) {
+                    AppInfoModel appInfoModel = (AppInfoModel)list.get(position);
+                    if (appInfoModel != null) {
 
-                        AppInfoModel appInfoModel = (AppInfoModel)list.get(position);
-                        if (appInfoModel != null) {
+                        TextView textView = (TextView) listItemView.findViewById(R.id.app_list_item_view_text_view);
+                        if (textView != null) {
 
                             textView.setText(appInfoModel.label.toString() + " : " + appInfoModel.name.toString());
+                        }
+
+                        ImageView imgView = (ImageView) listItemView.findViewById(R.id.app_list_item_view_icon_img_view);
+                        if (imgView != null) {
+
+                            imgView.setImageDrawable(appInfoModel.icon);
                         }
                     }
 
